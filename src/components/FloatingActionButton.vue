@@ -23,9 +23,8 @@ export default {
   user-select: none;
   cursor: pointer;
   border-radius: 28px;
-  transition: box-shadow 230ms ease 0s;
+  transition: box-shadow 300ms ease 0s, filter 300ms ease 0s;
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
-  transition: filter 150ms ease 0s;
 }
 .FloatingActionButton:active {
   box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
@@ -33,7 +32,7 @@ export default {
 }
 .FloatingActionButton > .icon {
   border-radius: 28px;
-  transition: transform 230ms ease 0s;
+  transition: transform 300ms ease 0s;
 }
 .FloatingActionButton > .icon:active {
   transform: rotate(90deg);
