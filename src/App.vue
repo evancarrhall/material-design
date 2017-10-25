@@ -1,17 +1,18 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <FloatingActionButton 
+      class="fab" 
+      :handleClick="()=>{}" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import FloatingActionButton from './components/FloatingActionButton'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    FloatingActionButton
   }
 }
 </script>
@@ -21,8 +22,11 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+.fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
 }
 </style>
