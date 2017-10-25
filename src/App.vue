@@ -2,7 +2,7 @@
   <div id="app">
     <FloatingActionButton 
       class="fab" 
-      :handleClick="()=>{}" />
+      :handleClick="() => {}" />
   </div>
 </template>
 
