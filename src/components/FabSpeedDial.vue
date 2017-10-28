@@ -2,7 +2,8 @@
   <div class="FabSpeedDial">
     <Fab class="mainButton"
       :icon="icon"
-      :click="handleClick" />
+      :click="handleClick"
+      :class="{activated: isActivated}" />
     <transition-group class="speedDialButtons" tag="div" :css="false"
       @before-enter="beforeEnter"
       @enter="enter"
