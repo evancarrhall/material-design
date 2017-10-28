@@ -8,8 +8,8 @@
     <FabSpeedDial
       class="fab-sd"
       :icon="fabSdIcon"
-      :speedDialOptions="speedDialOptions"
-      :click="fabSdClick" />
+      :activatedIcon="fabSdActivatedIcon"
+      :speedDialOptions="speedDialOptions" />
   </div>
 </template>
 
@@ -26,6 +26,7 @@ export default {
     return {
       showFabOne: true,
       fabSdIcon: 'more_vert',
+      fabSdActivatedIcon: 'add',
       speedDialOptions: {
         comment: {
           name: 'comment',
@@ -52,10 +53,6 @@ export default {
       setTimeout(()=> {
         this.showFabOne = true
       }, 1000)
-    },
-    fabSdClick() {
-
-      this.fabSdIcon === 'more_vert' ? this.fabSdIcon = 'add' : this.fabSdIcon = 'more_vert'
     }
   },
   mounted() {

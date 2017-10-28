@@ -1,7 +1,7 @@
 <template>
   <div class="FabSpeedDial">
     <Fab class="mainButton"
-      :icon="icon"
+      :icon="computedIcon"
       :click="handleClick"
       :class="{activated: isActivated}" />
     <transition-group class="speedDialButtons" tag="div" :css="false"
@@ -27,12 +27,19 @@ import Fab from './Fab'
 export default {
   name: 'FabSpeedDial',
   components: {Fab},
-  props: ['icon', 'click', 'speedDialOptions', 'activedIcon'],
+  props: ['icon', 'click', 'speedDialOptions', 'activatedIcon'],
   data() {
     return {
 
       isActivated: false,
       isMouseDown: false
+    }
+  },
+  computed: {
+    computedIcon() {
+      if(this.activatedIcon)
+        return this.isActivated ? this.activatedIcon : this.icon
+      return this.icon
     }
   },
   methods: {
