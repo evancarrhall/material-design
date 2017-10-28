@@ -52,7 +52,7 @@ export default {
   cursor: pointer;
   border-radius: 28px;
   transition: box-shadow 300ms ease 0s;
-  -webkit-tap-highlight-color: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 .Fab .icon {
   font-size: 24px;
