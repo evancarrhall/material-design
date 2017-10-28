@@ -57,6 +57,7 @@ export default {
   },
   mounted() {
       Waves.init({duration: 200})
+      Waves.attach('#app')
   }
 }
 </script>
