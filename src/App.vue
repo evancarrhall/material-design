@@ -7,8 +7,9 @@
       :click="fabOneClick" />
     <FabSpeedDial
       class="fab-sd"
-      :icon="'more_vert'"
-      :speedDialOptions="speedDialOptions" />
+      :icon="fabSdIcon"
+      :speedDialOptions="speedDialOptions"
+      :click="fabSdClick" />
   </div>
 </template>
 
@@ -24,6 +25,7 @@ export default {
   data() {
     return {
       showFabOne: true,
+      fabSdIcon: 'more_vert',
       speedDialOptions: {
         comment: {
           name: 'comment',
@@ -51,6 +53,10 @@ export default {
         this.showFabOne = true
       }, 1000)
     },
+    fabSdClick() {
+
+      this.fabSdIcon === 'more_vert' ? this.fabSdIcon = 'add' : this.fabSdIcon = 'more_vert'
+    }
   },
   mounted() {
       Waves.init({duration: 200})
@@ -87,5 +93,11 @@ export default {
 }
 .waves-effect {
   display: flex;
+}
+.fab-sd .mainButton .icon {
+  transition: transform 160ms ease;
+}
+.fab-sd .mainButton.activated .icon {
+  transform: rotate(45deg)
 }
 </style>
