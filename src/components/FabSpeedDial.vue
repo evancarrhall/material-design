@@ -87,8 +87,8 @@ export default {
   align-items: center;
 }
 .mainButton {
-  width: 56px;
-  height: 56px;
+  width: 5.6rem;
+  height: 5.6rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -96,18 +96,18 @@ export default {
   text-align: center;
   user-select: none;
   cursor: pointer;
-  border-radius: 28px;
+  border-radius: 2.8rem;
   transition: box-shadow 300ms ease 0s, filter 300ms ease 0s;
 }
 .mainButton > .wave > .icon {
-  font-size: 24px;
+  font-size: 2.4rem;
   color: #fff;
 }
 .speedDialButton.Fab {
-  height: 40px;
-  width: 40px;
+  height: 4.0rem;
+  width: 4.0rem;
   background-color: #fff;
-  margin-bottom: 14px;
+  margin-bottom: 1.4rem;
 }
 .speedDialButton.Fab.hover .animation-container::after {
   background-color: rgba(0, 0, 0, 0.15)

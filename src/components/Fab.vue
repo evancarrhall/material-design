@@ -58,9 +58,9 @@ export default {
 
 <style>
 .Fab {
-  width: 56px;
-  height: 56px;
-  border-radius: 28px;
+  width: 5.6rem;
+  height: 5.6rem;
+  border-radius: 2.8rem;
   background-color: #ff4081;
   text-align: center;
   user-select: none;
@@ -76,7 +76,7 @@ export default {
   background-color: rgba(255, 255, 255, 0.2)
 }
 .Fab .icon {
-  font-size: 24px;
+  font-size: 2.4rem;
   color: #fff;
 }
 .Fab .animation-container {

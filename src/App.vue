@@ -1,12 +1,14 @@
 <template>
   <div id="app">
-    <Fab
-      class="fab-one"
+    <mdButton class="button-one"
+      :text="'Submit'"
+      :isFlat="false"
+    />
+    <Fab class="fab-one"
       v-if="showFabOne" 
       :icon="'add'"
       :click="fabOneClick" />
-    <FabSpeedDial
-      class="fab-sd"
+    <FabSpeedDial class="fab-sd"
       :icon="fabSdIcon"
       :activatedIcon="fabSdActivatedIcon"
       :speedDialOptions="speedDialOptions" />
@@ -14,11 +16,13 @@
 </template>
 
 <script>
+import mdButton from './components/mdButton'
 import Fab from './components/Fab'
 import FabSpeedDial from './components/FabSpeedDial'
 export default {
   name: 'app',
   components: {
+    mdButton,
     Fab,
     FabSpeedDial
   },
@@ -66,6 +70,9 @@ export default {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
 }
 #app {
   height: 100vh;
