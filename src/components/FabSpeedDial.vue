@@ -99,10 +99,6 @@ export default {
   border-radius: 28px;
   transition: box-shadow 300ms ease 0s, filter 300ms ease 0s;
 }
-/* .mainButton.mouseDown {
-  box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 12px 17px 2px rgba(0, 0, 0, 0.14), 0px 5px 22px 4px rgba(0, 0, 0, 0.12);
-  filter: brightness(85%);
-} */
 .mainButton > .wave > .icon {
   font-size: 24px;
   color: #fff;
@@ -112,6 +108,9 @@ export default {
   width: 40px;
   background-color: #fff;
   margin-bottom: 14px;
+}
+.speedDialButton.Fab.hover .animation-container::after {
+  background-color: rgba(0, 0, 0, 0.15)
 }
 .speedDialButtons {
   display: flex;
