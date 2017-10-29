@@ -88,6 +88,9 @@ export default {
 .fab-sd .mainButton {
   background-color: #4386f0;
 }
+/* .fab-sd .speedDialButton.Fab.hover {
+  background-color: rgba(0, 0, 0, 0.18);
+} */
 .waves-effect {
   display: flex;
 }
