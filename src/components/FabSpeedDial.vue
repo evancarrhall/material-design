@@ -97,7 +97,6 @@ export default {
   user-select: none;
   cursor: pointer;
   border-radius: 2.8rem;
-  transition: box-shadow 300ms ease 0s, filter 300ms ease 0s;
 }
 .mainButton > .wave > .icon {
   font-size: 2.4rem;
