@@ -32,7 +32,7 @@ export default {
     return {
 
       isActivated: false,
-      isMouseDown: false
+      isPressed: false
     }
   },
   computed: {

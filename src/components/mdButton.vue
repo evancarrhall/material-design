@@ -18,7 +18,7 @@
     props: ['text', 'isFlat', 'isDense', 'href', 'click', 'isDisabled'],
     data() {
       return {
-        isMouseDown: false,
+        isPressed: false,
         isHover: false
       }
     },
@@ -32,7 +32,7 @@
           'mdButtonRaised': !this.isFlat,
           mdButtonDense: this.isDense,
           'z-1': this.isHover && !this.isFlat, 
-          'z-3': this.isMouseDown && !this.isFlat,
+          'z-3': this.isPressed && !this.isFlat,
           'disabled z-0': this.isDisabled
         }
       },
@@ -41,14 +41,14 @@
       handleMouseUp() {
         if(!this.isDisabled) {
           this.mouseUp && this.mouseUp()
-          this.isMouseDown = false
+          this.isPressed = false
           this.isHover = true
         }
       },
       handleMouseDown() {
         if(!this.isDisabled) {
           this.mouseDown && this.mouseDown()
-          this.isMouseDown = true
+          this.isPressed = true
           this.isHover = false
         }
       },
@@ -61,7 +61,7 @@
       handleMouseOut() {
         if(!this.isDisabled) {
           this.mouseOut && this.mouseOut()
-          this.isMouseDown = false
+          this.isPressed = false
           this.isHover = false
         }
       },

@@ -6,7 +6,7 @@
       @mouseover="handleMouseOver"
       @mouseout="handleMouseOut"
       @click="handleClick"
-      :class="{'z-10 hover': isHover, 'z-12': isMouseDown}">
+      :class="{'z-10 hover': isHover, 'z-12': isPressed}">
       <div class="animation-container">
         <i class="icon material-icons">{{icon}}</i>
       </div> 
@@ -21,19 +21,19 @@ export default {
   data() {
     return {
 
-      isMouseDown: false,
+      isPressed: false,
       isHover: false
     }
   },
   methods: {
     handleMouseUp() {
       this.mouseUp && this.mouseUp()
-      this.isMouseDown = false
+      this.isPressed = false
       this.isHover = true
     },
     handleMouseDown() {
       this.mouseDown && this.mouseDown()
-      this.isMouseDown = true
+      this.isPressed = true
       this.isHover = false
     },
     handleMouseOver() {
@@ -42,7 +42,7 @@ export default {
     },
     handleMouseOut() {
       this.mouseOut && this.mouseOut()
-      this.isMouseDown = false
+      this.isPressed = false
       this.isHover = false
     },
     handleClick() {
