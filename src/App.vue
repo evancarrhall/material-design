@@ -56,6 +56,11 @@
       />
     </div>
 
+    <mdDropdown 
+      style="margin-top: 15px"
+      :options="dropdownOptions"
+    />
+
     <Fab class="fab-one"
       v-if="showFabOne" 
       :icon="'add'"
@@ -69,6 +74,7 @@
 </template>
 
 <script>
+import mdDropdown from './components/mdDropdown'
 import mdButton from './components/mdButton'
 import Fab from './components/Fab'
 import FabSpeedDial from './components/FabSpeedDial'
@@ -77,7 +83,8 @@ export default {
   components: {
     mdButton,
     Fab,
-    FabSpeedDial
+    FabSpeedDial,
+    mdDropdown
   },
   data() {
     return {
@@ -100,6 +107,32 @@ export default {
           icon: 'title',
           click: ()=>{ console.log('title') }
         }
+      },
+      dropdownOptions: {
+        Calibri: {
+          name: 'Calibri',
+          click: ()=>{console.log('Calibri selected')}
+        },
+        'Courier New': {
+          name: 'Courier New',
+          click: ()=>{console.log('Courier New selected')}
+        },
+        'Helvetic Neue': {
+          name: 'Helvetic Neue',
+          click: ()=>{console.log('Helvetic Neue selected')}
+        },
+        'Times New Roman': {
+          name: 'Times New Roman',
+          click: ()=>{console.log('Times New Roman selected')}
+        },
+        Roboto: {
+          name: 'Roboto',
+          click: ()=>{console.log('Roboto selected')}
+        },
+        Verdana: {
+          name: 'Verdana',
+          click: ()=>{console.log('Verdana selected')}
+        }  
       }
     }
   },
@@ -138,7 +171,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* color: #2c3e50; */
-  background-color:#2c3e50;
+  background-color:#fff;
   padding: 15px 0 0 15px;
 }
 .fab-one {
