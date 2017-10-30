@@ -1,9 +1,61 @@
 <template>
   <div id="app">
-    <mdButton class="button-one"
-      :text="'Submit'"
-      :isFlat="false"
-    />
+
+    <div style="display: flex">
+      <mdButton
+        :text="'Submit'"
+        :click="buttonClick"
+      />
+      <mdButton id="button-raised-disabled"
+        :text="'Submit'"
+        :click="buttonClick"
+        :isDisabled="true"
+      />
+    </div>
+    <div style="display: flex; margin-top: 10px">
+      <mdButton
+        :text="'Submit'"
+        :isFlat="true"
+        :click="buttonClick"
+      />
+      <mdButton id="button-flat-disabled"
+        :text="'Submit'"
+        :isFlat="true"
+        :click="buttonClick"
+        :isDisabled="true"
+      />
+    </div>
+
+    <div style="display: flex;margin-top: 10px;">
+      <mdButton
+        :text="'Submit'"
+        :isDense="true"
+        :click="buttonClick"
+      />
+      <mdButton id="button-raised-disabled"
+        :text="'Submit'"
+        :click="buttonClick"
+        :isDisabled="true"
+        :isDense="true"
+      />
+    </div>
+
+    <div style="display: flex; margin-top: 10px">
+      <mdButton
+        :text="'Submit'"
+        :isFlat="true"
+        :isDense="true"
+        :click="buttonClick"
+      />
+      <mdButton
+        :text="'Submit'"
+        :isFlat="true"
+        :isDense="true"
+        :click="buttonClick"
+        :isDisabled="true"
+      />
+    </div>
+
     <Fab class="fab-one"
       v-if="showFabOne" 
       :icon="'add'"
@@ -12,6 +64,7 @@
       :icon="fabSdIcon"
       :activatedIcon="fabSdActivatedIcon"
       :speedDialOptions="speedDialOptions" />
+
   </div>
 </template>
 
@@ -57,6 +110,10 @@ export default {
       setTimeout(()=> {
         this.showFabOne = true
       }, 1000)
+    },
+    buttonClick() {
+
+      console.log('click')
     }
   },
   mounted() {
@@ -80,7 +137,9 @@ html {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  /* color: #2c3e50; */
+  background-color:#2c3e50;
+  padding: 15px 0 0 15px;
 }
 .fab-one {
   position: fixed;
@@ -95,16 +154,16 @@ html {
 .fab-sd .mainButton {
   background-color: #4386f0;
 }
-/* .fab-sd .speedDialButton.Fab.hover {
-  background-color: rgba(0, 0, 0, 0.18);
-} */
-.waves-effect {
+/* .waves-effect {
   display: flex;
-}
+} */
 .fab-sd .mainButton .icon {
   transition: transform 160ms ease;
 }
 .fab-sd .mainButton.activated .icon {
   transform: rotate(45deg)
+}
+.mdButton {
+  margin-right: 10px;
 }
 </style>
