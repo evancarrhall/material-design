@@ -42,7 +42,6 @@ export default {
     },
     handleMouseOut() {
       this.mouseOut && this.mouseOut()
-      console.log('mo')
       this.isMouseDown = false
       this.isHover = false
     },
@@ -51,7 +50,7 @@ export default {
     }
   },
   mounted() {
-    Waves.attach('.animation-container')
+    Waves.attach('.Fab .animation-container')
   }
 }
 </script>
