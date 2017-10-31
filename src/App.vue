@@ -61,6 +61,12 @@
       :options="dropdownOptions"
     />
 
+    <mdDropdown 
+      style="margin-top: 15px"
+      :options="dropdownOptions"
+      :isDisabled="true"
+    />
+
     <Fab class="fab-one"
       v-if="showFabOne" 
       :icon="'add'"
@@ -163,6 +169,9 @@ export default {
 }
 html {
   font-size: 62.5%;
+}
+input, textarea, select, button {
+  font: inherit;
 }
 #app {
   height: 100vh;
