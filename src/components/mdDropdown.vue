@@ -1,6 +1,6 @@
 <template>
   <div class="mdDropdown"
-    :class="{hover: isHover && !isOpen, 'pressed z-3': isPressed, 'open z-1': isOpen}">
+    :class="{hover: isHover && !isOpen, 'pressed z-3': isPressed, 'open z-1': isOpen, disabled: isDisabled}">
     <div 
       class="buttonContainer"
       @mouseover="handleMouseOver"
@@ -117,6 +117,10 @@
   border-top-right-radius: 0.2rem;
   border-bottom: none;
 }
+.mdDropdown.disabled {
+  color: #ddd;
+  cursor: default;
+}
 .mdDropdown .buttonContainer {
   display: flex;
   align-items: center;
@@ -144,6 +148,7 @@
   background-color: #fff;
   border-top: 1px solid rgba(0,0,0,0.1);
   overflow: auto;
+  z-index: 3;
 }
 .mdDropdown .options::-webkit-scrollbar {
   width: 0.5rem;
