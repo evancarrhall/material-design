@@ -7,7 +7,7 @@
       @mouseout="handleMouseOut"
       @click="handleClick"
       :class="{'z-10 hover': isHover, 'z-12': isPressed}">
-      <div class="animation-container">
+      <div ref="ripple" class="animation-container">
         <i class="icon material-icons">{{icon}}</i>
       </div> 
     </div>
@@ -50,7 +50,9 @@ export default {
     }
   },
   mounted() {
-    Waves.attach('.Fab .animation-container')
+    // Waves.attach('.Fab .animation-container');
+    rippleEffect.attach(this.$refs.ripple);
+
   }
 }
 </script>
@@ -79,6 +81,7 @@ export default {
   color: #fff;
 }
 .Fab .animation-container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;

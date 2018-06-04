@@ -7,7 +7,7 @@
     @mousedown="handleMouseDown"
     @mouseup="handleMouseUp"
     @click="handleClick">
-      <div class="animation-container"></div>
+      <div ref="ripple" class="animation-container"></div>
       {{text}}
   </a>
 </template>
@@ -72,7 +72,8 @@
       }
     },
     mounted() {
-      Waves.attach('.mdButton .animation-container')
+      // Waves.attach('.mdButton .animation-container')
+      rippleEffect.attach(this.$refs.ripple);
     }
   }
 </script>
