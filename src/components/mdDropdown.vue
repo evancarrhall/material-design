@@ -1,6 +1,6 @@
 <template>
   <div class="mdDropdown"
-    :class="{hover: isHover && !isOpen, 'pressed z-3': isPressed, 'open z-1': isOpen, disabled: isDisabled}">
+    :class="{hover: isHover && !isOpen, 'pressed z-3': isPressed, 'open z-1': isOpen, disabled: isDisabled, editable: isEditable}">
     <div 
       class="buttonContainer"
       @mouseover="handleMouseOver"
@@ -8,7 +8,7 @@
       @mousedown="handleMouseDown"
       @mouseup="handleMouseUp"
     >
-      <div class="button">{{selectedOption}}</div>
+      <input class="button" ref="button" readonly="readonly" :value="selectedOption"/>
       <i class="material-icons icon">{{computedIcon}}</i>
     </div>
     <div class="optionsAnchor">
@@ -29,10 +29,10 @@
 <script>
   export default {
     name: 'mdDropdown',
-    props: ['icon', 'options', 'isEditable', 'isDisabled', 'mouseUp', 'mouseDown', 'mouseOver', 'mouseOut'],
+    props: ['icon', 'options', 'defaultValue', 'isEditable', 'isDisabled', 'mouseUp', 'mouseDown', 'mouseOver', 'mouseOut'],
     data() {
       return {
-        selectedOption: 'Roboto',
+        selectedOption: this.defaultValue ? this.defaultValue : '',
         isOpen: false,
         isHover: false,
         isPressed: false,
@@ -47,7 +47,7 @@
         let computedOptions = Object.assign({}, this.options)
         delete(computedOptions[this.selectedOption])
         return computedOptions
-      }
+      },
     },
     methods: {
       handleMouseUp() {
@@ -90,6 +90,17 @@
         this.selectedOption = option.name
         this.isOpen = false
       }
+    },
+    // watch: {
+    //   isEditable: {
+    //     immediate: true,
+    //     handler: function(val) { 
+          
+    //     },
+    //   }
+    // },
+    mounted() {
+      this.isEditable && this.$refs.button.removeAttribute('readonly')
     }
   }
 </script>
@@ -102,7 +113,7 @@
   position: relative;
   display: flex;
   flex-flow: column;
-  background-color: #fff;
+  /* background-color: #fff; */
   font-size: 1.6rem;
   font-family: Roboto, Noto, sans-serif;
 }
@@ -111,11 +122,13 @@
 }
 .mdDropdown.pressed {
   border-radius: 0.2rem;
+  background-color: #fff;
 }
 .mdDropdown.open {
   border-top-left-radius: 0.2rem;
   border-top-right-radius: 0.2rem;
   border-bottom: none;
+  background-color: #fff;
 }
 .mdDropdown.disabled {
   color: #ddd;
@@ -124,16 +137,32 @@
 .mdDropdown .buttonContainer {
   display: flex;
   align-items: center;
-  padding: 1.6rem 1.6rem 1.6rem 2.4rem;
 }
 .mdDropdown .button {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  border: none;
+  cursor: pointer;
+  background-color: rgba(0,0,0,0);
+  padding: 1.6rem 1.6rem 1.6rem 1.6rem;
+}
+.mdDropdown.editable .button {
+  cursor: text;
+}
+.mdDropdown.editable.hover .button,
+.mdDropdown.editable.pressed .button,
+.mdDropdown.editable.open .button {
+  border-right: 1px solid rgba(0,0,0,0.1);
+}
+.mdDropdown.editable .button:active {
+  background-color: #fff;
+  z-index: 3;
 }
 .mdDropdown .icon {
   margin-left: auto;
   font-size: 1.6rem;
+  padding: 1.6rem 1.6rem 1.6rem 1.6rem;
 }
 .mdDropdown .optionsAnchor {
   position: relative;
@@ -165,9 +194,4 @@
 .mdDropdown .option:hover {
   background-color: #f0f0f0;
 }
-
-
-
-
-
 </style>

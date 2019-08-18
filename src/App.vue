@@ -67,6 +67,14 @@
       :isDisabled="true"
     />
 
+    <mdDropdown 
+      style="margin-top: 15px"
+      class="editableDropdown"
+      :options="dropdownOptionsEditable"
+      :isEditable="true"
+      :defaultValue="'100%'"
+    />
+
     <Fab class="fab-one"
       v-if="showFabOne" 
       :icon="'add'"
@@ -139,6 +147,32 @@ export default {
           name: 'Verdana',
           click: ()=>{console.log('Verdana selected')}
         }  
+      },
+      dropdownOptionsEditable: {
+        '150%': {
+          name: '150%',
+          click: ()=>{console.log('150% selected')}
+        },
+        '125%': {
+          name: '125%',
+          click: ()=>{console.log('125% selected')}
+        },
+        '100%': {
+          name: '100%',
+          click: ()=>{console.log('100% selected')}
+        },
+        '75%': {
+          name: '75%',
+          click: ()=>{console.log('75% selected')}
+        },
+        '50%': {
+          name: '50%',
+          click: ()=>{console.log('50% selected')}
+        },
+        '25%': {
+          name: '25%',
+          click: ()=>{console.log('25% selected')}
+        },
       }
     }
   },
@@ -156,7 +190,7 @@ export default {
     }
   },
   mounted() {
-      Waves.init({duration: 200})
+
   }
 }
 </script>
@@ -180,7 +214,7 @@ input, textarea, select, button {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* color: #2c3e50; */
-  background-color:#fff;
+  background-color:#eee;
   padding: 15px 0 0 15px;
 }
 .fab-one {
@@ -207,5 +241,9 @@ input, textarea, select, button {
 }
 .mdButton {
   margin-right: 10px;
+}
+.mdDropdown.editableDropdown {
+  width: 125px;
+  font-size: 1.2rem;
 }
 </style>
